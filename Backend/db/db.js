@@ -5,11 +5,21 @@ mongoose.connect('mongodb://localhost:27017/' ,
 )
 
 const userschema = new mongoose.Schema({
+    username :({
+    type : String,
+    required : true,
+    }),
     firstname : String ,
     lastname : String ,
-    password : String // hashed password , use bcrypt
+    password :({
+    type : String ,
+    required : true ,
+    minLength : 6
+    })  // hashed password , use bcrypt
 })
 
-module.exports ({
-    userschema
+const User = mongoose.model("User" , userschema);
+
+module.exports = ({
+    User
 })
