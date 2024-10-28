@@ -6,3 +6,5 @@ CORS (Cross-Origin Resource Sharing) is a security feature implemented by web br
 const cors = require('cors');
 app.use(cors());
 
+# body-parser
+Body-parser is a Node.js library that parses the body of an incoming HTTP request and makes the parsed data available as an object in the request object
