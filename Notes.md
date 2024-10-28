@@ -8,3 +8,12 @@ app.use(cors());
 
 # body-parser
 Body-parser is a Node.js library that parses the body of an incoming HTTP request and makes the parsed data available as an object in the request object
+
+# 1. import Statement
+ES6 (ECMAScript 2015) syntax for module imports.
+Used in JavaScript modules (ESM).
+`Asynchronous` by nature, allowing for better optimization in modern bundlers
+
+# 2. require() Statement
+CommonJS syntax, used in older JavaScript or Node.js projects.
+`Synchronous` by design (modules are loaded at runtime).
