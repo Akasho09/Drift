@@ -11,9 +11,8 @@ if(!authHeader || !authHeader.startsWith('Bearer ')) {
 try {
 const token = authHeader.split(' ')[1];
 const user = jwt.verify(token,JWT_SECRET);
-console.log(user.userId)
 if(user) {
-    req.userId=user.userId;
+   req.userId=user.userId;
    return next();
 }
 else {

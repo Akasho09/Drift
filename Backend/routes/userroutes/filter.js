@@ -1,4 +1,4 @@
-const {User} = require("../db/dbc")
+const {User} = require("../../db/dbc")
 async function filter (req,res) {
 const input = req.query.filter;
 const users = await User.find({

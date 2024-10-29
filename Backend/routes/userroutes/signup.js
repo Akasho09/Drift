@@ -3,7 +3,7 @@ const express=require("express")
 const jwt = require ("jsonwebtoken")
 const JWT_SECRET = require("../../config")
 const {userzodschema} = require('../../zod/zodschema')
-const { User } = require('../../db/dbc')
+const { User,Account } = require('../../db/dbc')
 
 async function signup (req,res){
     const username = req.body.username ;
@@ -28,6 +28,12 @@ const newuser = await User.create({
     password : password
 })
 const dbuser = await newuser.save() ;
+const newacc = await Account.create({
+    userId : dbuser._id,
+    balance : 10000
+})
+await newacc.save() ;
+
    const token = jwt.sign({
     userId: dbuser._id ,
    }, JWT_SECRET)
