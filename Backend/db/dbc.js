@@ -1,6 +1,6 @@
 const mongoose = require("mongoose") ;
 
-mongoose.connect('mongodb://localhost:27017/drift' ,
+mongoose.connect('mongodb+srv://akash:sJazfPDF1ZOHB6C2@cluster0.ku3wj.mongodb.net/Drift?retryWrites=true&w=majority' ,
     console.log("Connected to Database")
 )
 

@@ -17,3 +17,19 @@ Used in JavaScript modules (ESM).
 # 2. require() Statement
 CommonJS syntax, used in older JavaScript or Node.js projects.
 `Synchronous` by design (modules are loaded at runtime).
+
+# search firstname and last name simultaneouly and partially
+  $or : [ 
+        { firstname : {
+            "$regex" : input
+        }},
+        {lastname : {
+            "$regex" : input
+        }}
+    ]
+
+# Transtions 
+const session = await mongoose.startSession() ;
+session.startTransaction();
+session.abortTranstion() ;
+session.commitTranstion();

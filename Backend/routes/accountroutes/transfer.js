@@ -8,26 +8,28 @@ const session = await mongoose.startSession() ;
 session.startTransaction();
 const touser=await User.findOne({
     username:to
-})
+}).session(session)
 const toid = touser._id;
 const toaccount =await Account.findOne({
     userId: toid
-})
+}).session(session)
 const fromaccount =await Account.findOne({
     userId : req.userId
-})
+}).session(session)
 if(fromaccount.balance<sum || !fromaccount) {
+    await session.abortTransaction()
     return res.json({
         message : "Insufficent Funds"
     })
 }
 if(!toaccount) {
+    await session.abortTransaction()
     return res.json({
         message : "Invalid To Account username"
     })
 }
-await Account.updateOne({userId:req.userId},{ $inc : {balance : -sum }})
-await Account.updateOne({ userId : toid}, { $inc : {balance : sum }})
+await Account.updateOne({userId:req.userId},{ $inc : {balance : -sum }}).session(session)
+await Account.updateOne({ userId : toid}, { $inc : {balance : sum }}).session(session)
 
 await session.commitTransaction() ;
 console.log("Done Transition")
