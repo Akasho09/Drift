@@ -1,5 +1,6 @@
-# Drift Backend API
+# Drift
 A backend API built with Node.js, Express.js, MongoDB, and Zod for schema validation. The API supports JWT-based authentication, user management, and database operations using Mongoose.
+Frontend using React.
 
 # Prerequisites
 Ensure the following tools are installed:
