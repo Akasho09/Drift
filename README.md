@@ -10,7 +10,7 @@ Postman or any API testing tool.
 
 Installation
 - Clone the Repository
-git clone https://github.com/username/drift-backend.git
+git clone https://github.com/username/drift.git
 cd Backend
 - Initialize the Project
 npm init -y

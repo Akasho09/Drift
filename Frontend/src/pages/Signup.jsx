@@ -14,17 +14,19 @@ export const Signup = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    return <div className="bg-slate-300 h-screen flex justify-center">
+    return <div className="bg-slate-300 h-screen flex justify-center ">
     <div className="flex flex-col justify-center">
-      <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
+      <div className="rounded-lg bg-white w-100 text-center p-2 h-max px-4">
         <Heading label={"Sign up"} />
         <SubHeading label={"Enter your infromation to create an account"} />
-        <InputBox onChange={(e) => {
+        <div className="flex space-x-4">        <InputBox onChange={(e) => {
           setFirstName(e.target.value);
-        }} placeholder="John" label={"First Name"} type={"text"}/>
+        }} placeholder="Akash" label={"First Name"} type={"text"}/>
         <InputBox onChange={(e) => {
           setLastName(e.target.value);
-        }} placeholder="Doe" label={"Last Name"} type={"text"}/>
+        }} placeholder="Ahmad" label={"Last Name"} type={"text"}/></div>
+
+
         <InputBox onChange={(e) => {
           setUsername(e.target.value);
         }} placeholder="Akash09" label={"Username"} type={"text"}/>
