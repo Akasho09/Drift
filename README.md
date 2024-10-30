@@ -5,7 +5,7 @@ Frontend using React.
 # Prerequisites
 Ensure the following tools are installed:
 Node.js (v22.9.0+)
-MongoDB (for development: MongoDB Atlas)
+MongoDB
 Homebrew (for macOS users)
 Postman or any API testing tool.
 
