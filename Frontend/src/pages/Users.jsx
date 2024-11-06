@@ -8,17 +8,22 @@ export const Users = () => {
   const [filter, setfilter] = useState("");
   const navigate =  useNavigate();
 
-  useEffect( () => {
-    async function f1(){
-        try {
-            const response = await axios.get("http://localhost:4000/filter?filter=" + filter);
-            setUsers(response.data.user); 
-          } catch (error) {
-            console.error("Error fetching users:", error);
-          }
-        }; 
-        f1() ;
-    },[filter])
+  useEffect(() => {
+    try {
+      const int = setTimeout( async ()=>{
+        const response = await axios.get("http://localhost:4000/filter?filter=" + filter);
+        console.log("a")
+        setUsers(response.data.user); 
+       }, 500 )
+       return ()=>{
+        clearTimeout(int)
+       }
+      } 
+      catch (error) {
+        console.error("Error fetching users:", error);
+      }
+},[filter])
+  
   return (
     <div className="f">
         <input type="text" onChange={(e)=> {
